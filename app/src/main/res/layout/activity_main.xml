@@ -26,7 +26,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
             <ImageView
+                android:id="@+id/ayuda"
+                android:src="@drawable/sds_icons_ayuda_settings"
                 android:layout_weight="1"
+                android:tint="@color/dark_green"
                 android:layout_width="40dp"
                 android:layout_height="40dp"/>
         </LinearLayout>

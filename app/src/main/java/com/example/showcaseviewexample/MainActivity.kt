@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
         val target = findViewById<View>(R.id.cv_five)
         val element1 = findViewById<View>(R.id.iv_one)
         val element2 = findViewById<View>(R.id.cv_two)
-        val element3 = findViewById<View>(R.id.iv_four)
+        val element3 = findViewById<View>(R.id.ayuda)
 
         val targets = arrayOf(element1,element2,element3)
 
