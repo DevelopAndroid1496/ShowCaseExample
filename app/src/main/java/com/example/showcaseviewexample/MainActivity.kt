@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity() {
             .setMaskColour(resources.getColor(R.color.transparent)) //Color de fondo Aqui se mostraria el color transparente
             .setTarget(target)
             .setDismissTextColor(resources.getColor(R.color.black))
-            .setContentText("This is some amazing feature you should know about")
+            //.setContentText("This is some amazing feature you should know about")
             // optional but starting animations immediately in onCreate can make them choppy
             //.singleUse("Material show view Case") // provide a unique ID used to ensure it is only shown once
             .show()
