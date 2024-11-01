@@ -21,9 +21,9 @@ class CoachMarkDemoFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        adapter = CoachMarckDemoPagerAdapter(childFragmentManager)
         viewPager = view.findViewById(R.id.pager)
-        //viewPager.adapter = CurrentCoachMarkFragment
+        adapter = CoachMarckDemoPagerAdapter(requireActivity())
+        viewPager.adapter = adapter
     }
 
 

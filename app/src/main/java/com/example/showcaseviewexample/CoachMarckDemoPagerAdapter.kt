@@ -1,21 +1,20 @@
 package com.example.showcaseviewexample
 
-import android.os.Bundle
+import android.graphics.Color
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentStatePagerAdapter
+import androidx.fragment.app.FragmentActivity
+import androidx.viewpager2.adapter.FragmentStateAdapter
 
-class CoachMarckDemoPagerAdapter(fm: FragmentManager) : FragmentStatePagerAdapter(fm) {
+class CoachMarckDemoPagerAdapter(fm: FragmentActivity) : FragmentStateAdapter(fm) {
 
-    override fun getCount(): Int = 2
+    private val colors = listOf(
+        Color.RED,
+        Color.GREEN,
+        Color.BLUE
+    )
+    override fun getItemCount(): Int = 3
 
-    override fun getItem(position: Int): Fragment {
-        val currentCoachMark = CurrentCoachMarkFragment()
-        currentCoachMark.arguments = Bundle().apply {
-            putInt("CURRENT_ITEM",position + 1)
-        }
-        return currentCoachMark
-    }
+    override fun createFragment(position: Int): Fragment = CurrentCoachMarkFragment(colors[position])
 
 
 }

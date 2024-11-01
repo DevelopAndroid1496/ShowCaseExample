@@ -26,11 +26,15 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-        initShowCase()
+        //initShowCase()
+
+        supportFragmentManager.beginTransaction()
+            .add(R.id.main, CoachMarkDemoFragment())
+            .commit()
 
     }
 
-    private fun initShowCase() {
+    /*private fun initShowCase() {
 
         val target = findViewById<View>(R.id.cv_five)
         val element1 = findViewById<View>(R.id.iv_one)
@@ -64,5 +68,7 @@ class MainActivity : AppCompatActivity() {
 
         }
 
-    }
+    }*/
+
+
 }
