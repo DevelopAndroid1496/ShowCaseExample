@@ -4,4 +4,12 @@
     <color name="white">#FFFFFFFF</color>
     <color name="transparent">#00ffffff</color>
     <color name="red">#ff5733 </color>
+    <color name="dark_green">#278252</color>
+    <color name="yellow_green">#80c913</color>
+    <color name="pumpkin_orange">#ee882a</color>
+    <color name="caribbean_green">#1dd69f</color>
+
+
+
+
 </resources>
