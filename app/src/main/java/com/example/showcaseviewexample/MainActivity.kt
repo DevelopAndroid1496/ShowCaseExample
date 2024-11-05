@@ -2,6 +2,7 @@ package com.example.showcaseviewexample
 
 import android.os.Bundle
 import android.view.View
+import android.widget.ImageView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -20,13 +21,37 @@ class MainActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
 
+        val resaltado = findViewById<ImageView>(R.id.iv_one)
+        val overlay = findViewById<HighlightOverlayView>(R.id.overlay_view)
+        val image = findViewById<ImageView>(R.id.imageOne)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
 
-        initShowCase()
+        //CIRCULO
+        resaltado.post {
+            val location = IntArray(2)
+            resaltado.getLocationInWindow(location)
+            val centerX = location[0] + resaltado.width / 2f
+            val centerY = location[1] + resaltado.height / 2f
+
+            overlay.setHighlightCircleArea(centerX, centerY, resaltado.width * 0.6f)
+        }
+        //RECTANGULO
+        image.post {
+            val location = IntArray(2)
+            image.getLocationInWindow(location)
+            val left = location[0].toFloat()
+            val top = location[1].toFloat()
+            val right = left + image.width
+            val bottom = top + image.height
+
+            overlay.setHighlightRectangleArea(left, top, right, bottom)
+        }
+
+//        initShowCase()
 
     }
 
